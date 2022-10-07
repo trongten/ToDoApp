@@ -6,17 +6,25 @@ import InputToDo from './input';
 import FlatListToDo from './flatlist';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import FetchInputToDo from './fetchInputToDo';
+import FetchFlatListToDo from './fetFlatListToDo';
 export default function FetchToDo({nav}) {
 
-    
+    useEffect(() => {
+        fetch('https://633f93fb0dbc3309f3cce759.mockapi.io/api/todo')
+        .then(data=>data.json())
+        .then(data =>setList(data))
+    },[])
       const [list, setList] = useState([])
       const [text, setText] = useState("");
+
     return (
+
         <SafeAreaView style={s`items-center justify-center`} >
             
-            <InputToDo text={text} setText={setText}  setList={setList}/>
+            <FetchInputToDo text={text} setText={setText} setList={setList}/>
 
-            <FlatListToDo setList={setList} list={list}/>
+            <FetchFlatListToDo setList={setList} list={list}/>
         
 
         </SafeAreaView>
