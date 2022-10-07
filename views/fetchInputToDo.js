@@ -14,11 +14,12 @@ export default function FetchInputToDo({text,setText,setList}){
                 onPress={() => { fetch('https://633f93fb0dbc3309f3cce759.mockapi.io/api/todo', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: {todo: text}
-                }).then(data=>{fetch('https://633f93fb0dbc3309f3cce759.mockapi.io/api/todo')
-                                .then(data=>data.json())
-                                .then(data =>setList(data))})
-                
+                    body: JSON.stringify({todo: text})
+                })
+                fetch('https://633f93fb0dbc3309f3cce759.mockapi.io/api/todo')
+                .then(data=>data.json())
+                .then(data =>setList(data))
+               
                 }}
                 ><Text style={s`font-black text-white`}>Add</Text></TouchableOpacity>
             </View>

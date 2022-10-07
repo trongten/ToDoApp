@@ -8,7 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FetchInputToDo from './fetchInputToDo';
 import FetchFlatListToDo from './fetFlatListToDo';
-export default function FetchToDo({nav}) {
+export default function FetchToDo() {
 
     useEffect(() => {
         fetch('https://633f93fb0dbc3309f3cce759.mockapi.io/api/todo')

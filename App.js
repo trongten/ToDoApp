@@ -13,7 +13,8 @@ export default function App() {
 
     <NavigationContainer>
     <Stack.Navigator >
-    <Stack.Screen name="FetchToDo" component={FetchToDo} /> 
+      <Stack.Screen name="Listtodo" component={Listtodo} /> 
+      <Stack.Screen name="FetchToDo" component={FetchToDo} /> 
     </Stack.Navigator>
   </NavigationContainer>
 

@@ -6,7 +6,7 @@ import InputToDo from './input';
 import FlatListToDo from './flatlist';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-export default function Listtodo({nav}) {
+export default function Listtodo({navigation}) {
 
     
       const [list, setList] = useState([])
@@ -18,7 +18,7 @@ export default function Listtodo({nav}) {
 
             <FlatListToDo setList={setList} list={list}/>
         
-
+            <TouchableOpacity style={s`flex`} onPress={()=>navigation.navigate('FetchToDo')}><Text>FETCH TO DO</Text></TouchableOpacity>
         </SafeAreaView>
     )
 
